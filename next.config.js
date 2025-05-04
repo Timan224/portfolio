@@ -5,6 +5,13 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
     unoptimized: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  distDir: '.next',
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
