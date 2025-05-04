@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-inter text-gray-100 relative;
+  background-image: url('/images/hexagon-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-montserrat;
+}
+
+.section {
+  @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+}
+
+.btn {
+  @apply py-2 px-6 rounded-md font-medium transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-accent text-white py-3 px-6 rounded-md font-medium transition-all duration-300 hover:bg-opacity-90 shadow-accent;
+}
+
+.btn-secondary {
+  @apply bg-transparent border border-gray-500 text-white py-3 px-6 rounded-md font-medium transition-all duration-300 hover:border-accent hover:text-accent;
+}
+
+.btn-outline {
+  @apply border border-accent text-accent hover:bg-accent hover:text-white;
+}
+
+.card {
+  @apply bg-primary bg-opacity-90 rounded-lg shadow-md overflow-hidden transition-all duration-300 border border-gray-800 backdrop-blur-sm;
+}
+
+.input {
+  @apply w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-gray-900 bg-opacity-50 border-gray-700 text-white;
+} 
