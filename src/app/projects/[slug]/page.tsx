@@ -4,12 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
 
-// Типы для проекта и параметров
-type ProjectParams = {
-  params: {
-    slug: string;
-  };
-};
+// Удаляем определение типа ProjectParams
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -17,7 +12,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: ProjectParams) {
+// Исправляем сигнатуру функции, используя встроенное определение типов
+export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -131,4 +127,4 @@ export default function ProjectPage({ params }: ProjectParams) {
       </div>
     </main>
   );
-} 
+}
